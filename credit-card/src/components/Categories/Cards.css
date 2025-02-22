@@ -1,0 +1,30 @@
+.item {
+    /* background: #efefef; */
+    background: white;
+    width: 400px;
+    border-radius: 10px;
+    padding: 25px;
+    position: relative;
+    /* transition: all 0.3s ease-in-out; */
+}
+.item-image {
+    
+    padding-bottom: 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.item-image img {
+    width: 325px;
+    height: 200px;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+}
+
+.item-content {
+    padding-top: 15px;
+}
+.item-content h2 {
+    font-weight: 500;
+}
