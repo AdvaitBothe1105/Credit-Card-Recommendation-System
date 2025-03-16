@@ -1,8 +1,10 @@
 import "./Cards.css";
-import card_img from '../../assets/card.png';
+import card_img from "../../assets/card.png";
 import { Button } from "../ui/button";
 import { FaRegArrowAltCircleRight } from "react-icons/fa";
 import { IoMdPaper } from "react-icons/io";
+import { CiHeart } from "react-icons/ci";
+import React from "react";
 
 export const Cards = () => {
   const cardsData = [
@@ -22,6 +24,8 @@ export const Cards = () => {
     { id: 14, name: "Digital Credit Card", image: "../../assets/card.png" },
     { id: 15, name: "Limited Edition Card", image: "../../assets/card.png" },
   ];
+
+  
   // const { product_id, name, price } = product
   // console.log(product_id, product_id.length)
 
@@ -51,6 +55,7 @@ export const Cards = () => {
                   <Button className="bg-[#F5E960] text-black flex items-center gap-2">
                     <IoMdPaper /> Apply Now
                   </Button>
+                  
                 </div>
               </div>
             </a>

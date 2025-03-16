@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import '../../App.css'
 import card from '../../assets/card.png'
 
@@ -34,12 +35,11 @@ export const Carousel = () => {
                 Unlock exclusive cashback, travel perks, and exciting rewards with every transaction. Apply now and turn your spending into savings!
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-              <a
-                href="#"
-                className="rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-xs hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-              >
+              <Link to='/recommendations' className='rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-xs hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
                 Get started
-              </a>
+
+              </Link>
+             
               <a href="#" className="text-sm/6 font-semibold text-white">
                 Learn more <span aria-hidden="true">→</span>
               </a>
