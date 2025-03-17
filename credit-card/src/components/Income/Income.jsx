@@ -40,32 +40,43 @@ const categories = [
   "Misc",
 ];
 
+
+
 export const Income = () => {
-  const [income, setIncome] = useState(5000); // Default income
+  const [income, setIncome] = useState(5000);
   const [spending, setSpending] = useState(() =>
     categories.reduce((acc, category) => ({ ...acc, [category]: 0 }), {})
   );
-  // Compute total monthly expenses by summing all values in spending state
+
+  // Compute category-wise totals
+  const premiumSpending =
+    spending.Dining + spending.Travel + spending.International;
+  const allPurposeSpending = spending.Grocery + spending.Misc;
+  const lifestyleSpending =
+    spending.Movies + spending.Shopping + spending.Dining;
+  const fuelSpending = spending.Fuel;
+  const travelSpending = spending.Travel;
+
+  // Compute total monthly expenses
   const totalExpenses = Object.values(spending).reduce(
     (acc, val) => acc + val,
     0
   );
-  const [showQues, setShowQues] = useState(false);
 
-  const [totalSpending, setTotalSpending] = useState(0);
-  const [recommendations, setRecommendations] = useState(null);
-  const ExpenseSliders = () => {
-    // State to Store Spending
-    const [spending, setSpending] = useState(() =>
-      categories.reduce((acc, category) => ({ ...acc, [category]: 0 }), {})
-    );
-  };
+  const [showQues, setShowQues] = useState(false);
 
   return (
     <div className="flex flex-col items-center bg-gray-100 min-h-screen pt-3 pb-5">
-      <Toaster theme="dark"/> {/* Ensure Toaster is included in the UI */}
+      <Toaster theme="dark" />
       {showQues ? (
-        <Questions />
+        <Questions
+          premium={premiumSpending}
+          allPurpose={allPurposeSpending}
+          lifestyle={lifestyleSpending}
+          fuel={fuelSpending}
+          travel={travelSpending}
+          income={income}
+        />
       ) : (
         <>
           <h1 className="text-3xl font-bold">FinMatch</h1>
@@ -74,7 +85,6 @@ export const Income = () => {
           </p>
 
           <div className="bg-white flex flex-col p-6 rounded-lg shadow-lg w-[90%]">
-            {/* Income & Expenses in One Row */}
             <div className="flex items-start w-full">
               {/* Income Slider Section */}
               <div className="income flex flex-col items-center bg-[#edeae7] rounded-lg p-4 w-[20%]">
@@ -94,12 +104,11 @@ export const Income = () => {
                     min={5000}
                     max={600000}
                     value={income}
-                    // color= "secondary"
                     onChange={(e, newValue) => setIncome(newValue)}
                     valueLabelFormat={(value) => `₹ ${value.toLocaleString()}`}
                     sx={{
                       width: 10,
-                      color: '#3a8589',
+                      color: "#3a8589",
                       "& .MuiSlider-thumb": { borderRadius: "1px" },
                     }}
                   />
@@ -123,7 +132,7 @@ export const Income = () => {
                   Select Your Monthly Expenditure
                 </h2>
 
-                <div className="expense-sliders flex justify-between ">
+                <div className="expense-sliders flex justify-between">
                   {categories.map((category) => (
                     <div
                       key={category}
@@ -158,9 +167,7 @@ export const Income = () => {
                           }
                           sx={{
                             width: 10,
-                            color: '#3a8589',
-
-                            // color: "success.main",
+                            color: "#3a8589",
                             "& .MuiSlider-thumb": { borderRadius: "1px" },
                           }}
                         />
@@ -170,9 +177,8 @@ export const Income = () => {
                         ₹ {spending[category]?.toLocaleString() || "0"}
                       </p>
 
-                      <div className="flex items-center  space-x-2 mt-2 bg-white p-2 rounded-lg shadow-md">
-                        {categoryIcons[category]}{" "}
-                        {/* Dynamically render icon */}
+                      <div className="flex items-center space-x-2 mt-2 bg-white p-2 rounded-lg shadow-md">
+                        {categoryIcons[category]}
                         <label className="block text-lg font-medium">
                           {category}
                         </label>
@@ -211,7 +217,7 @@ export const Income = () => {
                     "Your total monthly expenses exceed your income! Please adjust them."
                   );
                 } else {
-                  setShowQues(true); // Proceed only if valid
+                  setShowQues(true);
                 }
               }}
             >

@@ -35,7 +35,7 @@ export const Carousel = () => {
                 Unlock exclusive cashback, travel perks, and exciting rewards with every transaction. Apply now and turn your spending into savings!
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6 lg:justify-start">
-              <Link to='/recommendations' className='rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-xs hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
+              <Link to='/incomepage' className='rounded-md bg-white px-3.5 py-2.5 text-sm font-semibold text-gray-900 shadow-xs hover:bg-gray-100 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white'>
                 Get started
 
               </Link>
@@ -48,7 +48,7 @@ export const Carousel = () => {
           <div className="relative mt-16 h-80 lg:mt-8 ml-52">
             <img
               alt="App screenshot"
-              src={card}
+              src="/assets/MagnusP.jpeg"
               width={1824}
               height={1080}
               className="absolute top-0 left-0 w-[45rem] max-w-none rounded-3xl bg-white/5 ring-1 ring-white/10"

@@ -2,16 +2,9 @@ import { Income } from "@/components/Income/Income";
 import { SliderSizes } from "@/components/Slider/Slider";
 import React, { useState } from "react";
 
-const categories = [
-  "Dining",
-  "Travel",
-  "Shopping",
-  "Fuel",
-  "Movies",
-  "International",
-];
 
-export const Recommendations = () => {
+
+export const IncomePage = () => {
   // Handle recommendation request
   //   const fetchRecommendations = async () => {
   //     try {

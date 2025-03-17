@@ -6,7 +6,8 @@ import { Navbar } from "./components/Navbar/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router"
 
 import { HomePage } from "./Pages/HomePage";
-import { Recommendations } from "./Pages/Recommendations";
+import { IncomePage } from "./Pages/IncomePage";
+import { CardRecommendation } from "./Pages/CardRecommendation";
 // import { SliderSizes } from './components/Slider/Slider'
 
 function App() {
@@ -15,7 +16,6 @@ function App() {
       <Router>
         <Navbar />
         <RoutesList />
-
       </Router>
 
     </>
@@ -26,7 +26,8 @@ const RoutesList = () => {
   return (
     <Routes>
       <Route path="/" element={<HomePage />} />
-      <Route path="/recommendations" element={<Recommendations />} />
+      <Route path="/incomepage" element={<IncomePage />} />
+      <Route path="/cardrec" element={<CardRecommendation/>}/>
     </Routes>
   );
 };
