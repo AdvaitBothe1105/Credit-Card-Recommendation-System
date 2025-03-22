@@ -1,6 +1,5 @@
 import { Link } from 'react-router-dom'
 import '../../App.css'
-import card from '../../assets/card.png'
 
 
 export const Carousel = () => {
@@ -22,8 +21,8 @@ export const Carousel = () => {
             />
             <defs>
               <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
-                <stop stopColor="#7775D6" />
-                <stop offset={1} stopColor="#E935C1" />
+                <stop stopColor="#edeae7" />
+                <stop offset={1} stopColor="#ffffff" />
               </radialGradient>
             </defs>
           </svg>
@@ -48,7 +47,7 @@ export const Carousel = () => {
           <div className="relative mt-16 h-80 lg:mt-8 ml-52">
             <img
               alt="App screenshot"
-              src="/assets/MagnusP.jpeg"
+              src="/assets/Cards/MagnusP.jpeg"
               width={1824}
               height={1080}
               className="absolute top-0 left-0 w-[45rem] max-w-none rounded-3xl bg-white/5 ring-1 ring-white/10"

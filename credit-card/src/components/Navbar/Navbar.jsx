@@ -3,9 +3,11 @@ import { FaRegUserCircle } from "react-icons/fa";
 // import "./Navbar.css";
 import '../../App.css'
 import { Button } from "@/components/ui/button"
+import { useNavigate } from "react-router-dom";
 
 
 export const Navbar = () => {
+  const navigate = useNavigate();
   return (
     <>
       <nav className="navbar bg-dark">
@@ -16,7 +18,8 @@ export const Navbar = () => {
               alt="Logo"
               width={105}
               height={24}
-              className="d-inline-block align-text-top rounded-full"
+              className="d-inline-block align-text-top rounded-full cursor-pointer"
+              onClick={() => navigate('/')}
             />
           </div>
           <Button variant="outline" className="font-bold text-xl"> <FaRegUserCircle className="mr-2 mb-2 mt-2"/> LOGIN</Button>
