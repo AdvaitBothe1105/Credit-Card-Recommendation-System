@@ -11,6 +11,8 @@ import { CardRecommendation } from "./Pages/CardRecommendation";
 import { CardInfo } from "./Pages/CardInfo";
 import { Footer } from "./components/Footer/Footer";
 import { QuestionPage } from "./Pages/QuestionPage";
+import { ApplyNow } from "./Pages/ApplyNow";
+import './App.css';
 // import { SliderSizes } from './components/Slider/Slider'
 
 function App() {
@@ -34,6 +36,7 @@ const RoutesList = () => {
       <Route path="/cardrec" element={<CardRecommendation/>}/>
       <Route path="/cardinfo" element = {<CardInfo />} />
       <Route path="/quespage" element = {<QuestionPage />} />
+      <Route path="/applynow" element = {<ApplyNow />} />
     </Routes>
   );
 };

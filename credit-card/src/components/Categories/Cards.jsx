@@ -53,7 +53,7 @@ export const Cards = () => {
                 >
                   Learn More <FaRegArrowAltCircleRight />
                 </Button>
-                <Button className="bg-[#F5E960] text-black flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#c7bd56]">
+                <Button className="bg-[#F5E960] text-black flex items-center gap-2 px-4 py-2 rounded-lg hover:bg-[#c7bd56]" onClick={() => navigate("/applynow")}>
                   <IoMdPaper /> Apply Now
                 </Button>
               </div>
