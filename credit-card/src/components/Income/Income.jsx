@@ -213,8 +213,10 @@ export const Income = () => {
               toast.error(
                 "Your total monthly expenses exceed your income! Please adjust them."
               );
-              
+              return; // Stop further execution
             }
+
+            // Navigate only if conditions are met
             navigate("/quespage", {
               state: {
                 premium: premiumSpending,
