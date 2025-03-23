@@ -139,7 +139,7 @@ export const CardDetails = () => {
           </div>
         </div>
         <div className="apply-btn flex justify-center mt-5">
-          <Button className="bg-black text-white flex items-center gap-2 hover:bg-[#c7bd56] ">
+          <Button className="bg-black text-white flex items-center gap-2 hover:bg-[#c7bd56] " onClick={() => navigate("/applynow")}>
             <IoMdPaper /> Apply Now
           </Button>
         </div>
