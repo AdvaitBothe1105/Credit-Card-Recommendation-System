@@ -138,7 +138,7 @@ export const Income = () => {
                       orientation="vertical"
                       valueLabelDisplay="auto"
                       step={1000}
-                      min={1000}
+                      min={0}
                       max={50000}
                       value={spending[category] || 0}
                       onChange={(e, newValue) =>
