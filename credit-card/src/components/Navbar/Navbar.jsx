@@ -1,34 +1,45 @@
 import logo from "../../assets/Logo.png";
 import { FaRegUserCircle } from "react-icons/fa";
 // import "./Navbar.css";
-import '../../App.css'
-import { Button } from "@/components/ui/button"
+import "../../App.css";
+import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   const navigate = useNavigate();
   return (
     <>
-      <nav className="navbar bg-dark">
-        <div className="container-fluid">
-          <div className="logo">
-          <img
-              src={logo}
-              alt="Logo"
-              width={105}
-              height={24}
-              className="d-inline-block align-text-top rounded-full cursor-pointer"
-              onClick={() => navigate('/')}
-            />
+      <header className="w-full bg-[#222a32] border-b border-gray-700 shadow-sm sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex justify-between items-center h-20">
+            {/* Logo */}
+            <Link
+              to="/"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="flex items-center space-x-2"
+            >
+              <img
+                src={logo}
+                width={105}
+                height={24}
+                alt="VYOMA Logo"
+                className="object-contain rounded-2xl"
+              />
+            </Link>
+
+            {/* Auth Buttons */}
+            <div className="flex items-center space-x-4">
+              <Link
+                to="/incomepage"
+                className="bg-[#EDEAE7] text-black px-5 py-2 rounded-lg text-base font-semibold shadow hover:bg-[#e1d9c9] transition"
+              >
+                Get Started
+              </Link>
+            </div>
           </div>
-          <Button variant="outline" className="font-bold text-xl"> <FaRegUserCircle className="mr-2 mb-2 mt-2"/> LOGIN</Button>
-          {/* <div className="login flex items-center justify-center text-[#3e6678] bg-[#EDEAE7] rounded-full p-2">
-            <FaRegUserCircle className="size-5 mr-2 mb-2"/>
-            <p className="font-bold">LOGIN</p>
-          </div> */}
         </div>
-      </nav>
+      </header>
     </>
   );
 };
